@@ -1,16 +1,59 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { dogs } from "../../../data/dogs";
+import { getDogSlug } from "../../seo";
+
+type DogPageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+function findDogBySlug(slug: string) {
+  return dogs.find((dog) => getDogSlug(dog) === slug);
+}
+
+export function generateStaticParams() {
+  return dogs.map((dog) => ({
+    slug: getDogSlug(dog),
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: DogPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const dog = findDogBySlug(slug);
+
+  if (!dog) {
+    return {
+      title: "Hundrasen hittades inte | ValpMatch",
+    };
+  }
+
+  const title = `${dog.name} – fakta, temperament och vem rasen passar | ValpMatch`;
+
+  return {
+    title,
+    description: dog.description,
+    alternates: {
+      canonical: `/raser/${getDogSlug(dog)}`,
+    },
+    openGraph: {
+      title,
+      description: dog.description,
+      url: `/raser/${getDogSlug(dog)}`,
+      siteName: "ValpMatch",
+      locale: "sv_SE",
+      type: "article",
+    },
+  };
+}
 
 export default async function DogPage({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+}: DogPageProps) {
   const { slug } = await params;
 
-  const dog = dogs.find(
-    (d) => (d.slug ?? d.name.toLowerCase().trim().replaceAll(" ", "-")) === slug
-  );
+  const dog = findDogBySlug(slug);
 
   if (!dog) {
     return <h1>Hundrasen hittades inte.</h1>;

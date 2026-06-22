@@ -19,6 +19,19 @@ export default function RaserPage() {
           color: "#222",
       }}
     >
+      <Link
+        href="/"
+        style={{
+          display: "inline-block",
+          marginBottom: 20,
+          color: "#f97316",
+          fontWeight: "bold",
+          textDecoration: "none",
+        }}
+      >
+        ← Till startsidan
+      </Link>
+
       <h1
         style={{
           textAlign: "center",
