@@ -1,6 +1,7 @@
 export const dogs = [
   {
     name: "Jack Russell Terrier",
+    slug: "jack-russell-terrier",
     size: "Liten",
     activity: "Mycket aktiv",
     homes: ["Radhus", "Villa", "Gård"],
@@ -28,6 +29,7 @@ description: "Liten men väldigt energisk hund...",
   
   {
     name: "Papillon",
+    slug: "papillon",
     size: "Liten",
     activity: "Mycket aktiv",
     homes: ["Lägenhet", "Radhus", "Villa"],
@@ -54,6 +56,7 @@ cons: [
 
   {
     name: "Labrador Retriever",
+    slug: "labrador-retriever",
     size: "Stor",
     activity: "Ganska aktiv",
     homes: ["Villa", "Gård"],
@@ -80,6 +83,7 @@ cons: [
   
   {
     name: "Golden Retriever",
+    slug: "golden-retriever",
     size: "Stor",
     activity: "Ganska aktiv",
     homes: ["Villa", "Gård"],
@@ -105,6 +109,7 @@ cons: [
   },
   {
   name: "Border Collie",
+  slug: "border-collie",
   size: "Medel",
   activity: "Mycket aktiv",
   homes: ["Villa", "Gård"],
@@ -160,6 +165,7 @@ cons: [
 },
 {
   name: "Chihuahua",
+  slug: "chihuahua",
   size: "Liten",
   activity: "Lugn",
   homes: ["Lägenhet", "Radhus", "Villa"],
@@ -185,6 +191,7 @@ cons: [
 },
 {
   name: "Fransk Bulldog",
+  slug: "fransk-bulldog",
   size: "Liten",
   activity: "Lugn",
   homes: ["Lägenhet", "Radhus", "Villa"],
@@ -212,6 +219,7 @@ cons: [
 },
 {
   name: "Cocker Spaniel",
+  slug: "cocker-spaniel",
   size: "Medel",
   activity: "Ganska aktiv",
   homes: ["Lägenhet", "Radhus", "Villa"],
@@ -239,6 +247,7 @@ cons: [
 },
 {
   name: "Berner Sennenhund",
+  slug: "berner-sennenhund",
   size: "Stor",
   activity: "Ganska aktiv",
   homes: ["Villa", "Gård"],
@@ -262,6 +271,246 @@ cons: [
     "Kortare livslängd än många andra raser",
     "Fäller mycket päls",
     "Kräver gott om plats",
+  ],
+},
+{
+  name: "Pomeranian",
+  slug: "pomeranian",
+  size: "Liten",
+  activity: "Ganska aktiv",
+  homes: ["Lägenhet", "Radhus", "Villa"],
+  childFriendly: "Medel",
+  grooming: "Hög",
+  weight: "2–3 kg",
+  life: "12–16 år",
+  image: "/dogs/pomeranian.jpg",
+  description:
+    "En liten, pigg och självsäker hund med mycket personlighet och stor päls.",
+  pros: [
+    "Liten och lätt att ha i mindre hem",
+    "Alert och social",
+    "Lekfull och charmig",
+  ],
+  cons: [
+    "Pälsen kräver regelbunden skötsel",
+    "Kan bli skällig utan träning",
+    "Kan vara känslig för hårdhänt hantering",
+  ],
+},
+{
+  name: "Cavalier King Charles Spaniel",
+  slug: "cavalier-king-charles-spaniel",
+  size: "Liten",
+  activity: "Ganska aktiv",
+  homes: ["Lägenhet", "Radhus", "Villa"],
+  childFriendly: "Hög",
+  grooming: "Medel",
+  weight: "5–8 kg",
+  life: "9–14 år",
+  image: "/dogs/cavalier-king-charles-spaniel.jpg",
+  description:
+    "En mjuk, tillgiven och social sällskapshund som ofta trivs nära sin familj.",
+  pros: [
+    "Mycket vänlig och tillgiven",
+    "Passar ofta bra med barn",
+    "Anpassningsbar i olika boenden",
+  ],
+  cons: [
+    "Kan ha ärftliga hälsoproblem",
+    "Trivs inte med att vara ensam länge",
+    "Behöver regelbunden pälsvård",
+  ],
+},
+{
+  name: "Australian Shepherd",
+  slug: "australian-shepherd",
+  size: "Medel",
+  activity: "Mycket aktiv",
+  homes: ["Villa", "Gård"],
+  childFriendly: "Hög",
+  grooming: "Medel",
+  weight: "16–32 kg",
+  life: "12–15 år",
+  image: "/dogs/australian-shepherd.jpg",
+  description:
+    "En intelligent, arbetsvillig och energisk hund som passar aktiva hem.",
+  pros: [
+    "Mycket lättlärd",
+    "Passar bra för hundsport och träning",
+    "Lojal och engagerad familjehund",
+  ],
+  cons: [
+    "Kräver mycket motion och mental stimulans",
+    "Kan bli rastlös utan uppgifter",
+    "Passar sämre för stillsamma livsstilar",
+  ],
+},
+{
+  name: "Shih Tzu",
+  slug: "shih-tzu",
+  size: "Liten",
+  activity: "Lugn",
+  homes: ["Lägenhet", "Radhus", "Villa"],
+  childFriendly: "Medel",
+  grooming: "Hög",
+  weight: "4–8 kg",
+  life: "10–16 år",
+  image: "/dogs/shih-tzu.jpg",
+  description:
+    "En liten, glad och tillgiven sällskapshund som ofta trivs i ett lugnt hem.",
+  pros: [
+    "Passar ofta bra i lägenhet",
+    "Tillgiven och social",
+    "Kräver måttligt med motion",
+  ],
+  cons: [
+    "Pälsen kräver mycket skötsel",
+    "Kan vara envis vid träning",
+    "Kan vara känslig för värme",
+  ],
+},
+{
+  name: "Rottweiler",
+  slug: "rottweiler",
+  size: "Stor",
+  activity: "Mycket aktiv",
+  homes: ["Villa", "Gård"],
+  childFriendly: "Medel",
+  grooming: "Låg",
+  weight: "35–60 kg",
+  life: "8–10 år",
+  image: "/dogs/rottweiler.jpg",
+  description:
+    "En stark, lojal och trygg hund som behöver tydlig träning och ansvarstagande ägare.",
+  pros: [
+    "Lojal och stabil med rätt träning",
+    "Lättskött päls",
+    "Passar för aktiva och erfarna hundägare",
+  ],
+  cons: [
+    "Kräver konsekvent träning och socialisering",
+    "Stor och kraftfull hund",
+    "Passar inte ovana hundägare utan stöd",
+  ],
+},
+{
+  name: "Dvärgschnauzer",
+  slug: "dvargschnauzer",
+  size: "Liten",
+  activity: "Ganska aktiv",
+  homes: ["Lägenhet", "Radhus", "Villa"],
+  childFriendly: "Hög",
+  grooming: "Hög",
+  weight: "5–9 kg",
+  life: "12–15 år",
+  image: "/dogs/dvargschnauzer.jpg",
+  description:
+    "En pigg, modig och lättlärd liten hund med tydlig personlighet.",
+  pros: [
+    "Alert och lättlärd",
+    "Passar många olika boenden",
+    "Ofta robust och aktiv för sin storlek",
+  ],
+  cons: [
+    "Pälsen behöver trimmas regelbundet",
+    "Kan vara vaksam och skällig",
+    "Behöver mental stimulans",
+  ],
+},
+{
+  name: "Mops",
+  slug: "mops",
+  size: "Liten",
+  activity: "Lugn",
+  homes: ["Lägenhet", "Radhus", "Villa"],
+  childFriendly: "Hög",
+  grooming: "Låg",
+  weight: "6–8 kg",
+  life: "12–15 år",
+  image: "/dogs/mops.jpg",
+  description:
+    "En social, charmig och lekfull sällskapshund som gärna är nära sin familj.",
+  pros: [
+    "Mycket social och tillgiven",
+    "Passar ofta bra i lägenhet",
+    "Kräver relativt lite motion",
+  ],
+  cons: [
+    "Kan ha andningsproblem",
+    "Tål värme dåligt",
+    "Kan lätt gå upp i vikt",
+  ],
+},
+{
+  name: "Flatcoated Retriever",
+  slug: "flatcoated-retriever",
+  size: "Stor",
+  activity: "Mycket aktiv",
+  homes: ["Villa", "Gård"],
+  childFriendly: "Hög",
+  grooming: "Medel",
+  weight: "25–36 kg",
+  life: "8–10 år",
+  image: "/dogs/flatcoated-retriever.jpg",
+  description:
+    "En glad, aktiv och social retriever som ofta behåller sin lekfullhet länge.",
+  pros: [
+    "Vänlig och social",
+    "Passar aktiva familjer",
+    "Arbetsvillig och lekfull",
+  ],
+  cons: [
+    "Behöver mycket motion",
+    "Kan vara intensiv som ung",
+    "Trivs dåligt med för lite stimulans",
+  ],
+},
+{
+  name: "Shetland Sheepdog",
+  slug: "shetland-sheepdog",
+  size: "Liten",
+  activity: "Ganska aktiv",
+  homes: ["Lägenhet", "Radhus", "Villa"],
+  childFriendly: "Hög",
+  grooming: "Hög",
+  weight: "6–12 kg",
+  life: "12–14 år",
+  image: "/dogs/shetland-sheepdog.jpg",
+  description:
+    "En intelligent, följsam och känslig vallhund i mindre format.",
+  pros: [
+    "Mycket lättlärd",
+    "Passar bra för träning och hundsport",
+    "Tillgiven och uppmärksam",
+  ],
+  cons: [
+    "Kan vara reserverad mot främlingar",
+    "Pälsen kräver regelbunden skötsel",
+    "Kan bli skällig utan träning",
+  ],
+},
+{
+  name: "Staffordshire Bullterrier",
+  slug: "staffordshire-bullterrier",
+  size: "Medel",
+  activity: "Ganska aktiv",
+  homes: ["Lägenhet", "Radhus", "Villa"],
+  childFriendly: "Hög",
+  grooming: "Låg",
+  weight: "11–17 kg",
+  life: "12–14 år",
+  image: "/dogs/staffordshire-bullterrier.jpg",
+  description:
+    "En kraftfull, glad och människokär hund som trivs med nära kontakt och tydliga rutiner.",
+  pros: [
+    "Mycket social och tillgiven",
+    "Lättskött päls",
+    "Lekfull och modig",
+  ],
+  cons: [
+    "Behöver tydlig träning och socialisering",
+    "Kan vara stark i kopplet",
+    "Trivs inte med att lämnas ensam länge",
   ],
 },
 
