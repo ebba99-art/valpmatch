@@ -119,6 +119,7 @@ export default function Home() {
         return {
           ...dog,
           score,
+          matchPercent: Math.min(100, Math.round(score)),
           reasons,
         };
       })
@@ -286,7 +287,7 @@ if (!started) {
                 {index + 1}. {dog.name}
               </h2>
 
-              <div style={scoreStyle}>{dog.score}% match</div>
+              <div style={scoreStyle}>{dog.matchPercent}% match</div>
 
               <p>{dog.description}</p>
 

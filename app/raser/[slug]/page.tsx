@@ -11,6 +11,19 @@ function findDogBySlug(slug: string) {
   return dogs.find((dog) => getDogSlug(dog) === slug);
 }
 
+function getSimilarDogs(currentDog: (typeof dogs)[number]) {
+  return dogs
+    .filter((dog) => getDogSlug(dog) !== getDogSlug(currentDog))
+    .map((dog) => ({
+      ...dog,
+      similarityScore:
+        (dog.size === currentDog.size ? 2 : 0) +
+        (dog.activity === currentDog.activity ? 2 : 0),
+    }))
+    .sort((a, b) => b.similarityScore - a.similarityScore)
+    .slice(0, 3);
+}
+
 export function generateStaticParams() {
   return dogs.map((dog) => ({
     slug: getDogSlug(dog),
@@ -58,6 +71,8 @@ export default async function DogPage({
   if (!dog) {
     return <h1>Hundrasen hittades inte.</h1>;
   }
+
+  const similarDogs = getSimilarDogs(dog);
 
   return (
     <main style={{ padding: 40, background: "#f5efe8", minHeight: "100vh" }}>
@@ -164,8 +179,51 @@ export default async function DogPage({
   </p>
 </div>
  
+<section style={{ marginTop: 40 }}>
+  <h2>Liknande hundraser</h2>
 
-        
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+      gap: 18,
+      marginTop: 18,
+    }}
+  >
+    {similarDogs.map((similarDog) => (
+      <Link
+        key={similarDog.name}
+        href={`/raser/${getDogSlug(similarDog)}`}
+        style={{
+          background: "#faf7f2",
+          border: "1px solid #eee",
+          borderRadius: 16,
+          color: "inherit",
+          display: "block",
+          padding: 16,
+          textDecoration: "none",
+        }}
+      >
+        <img
+          src={similarDog.image}
+          alt={similarDog.name}
+          style={{
+            borderRadius: 12,
+            height: 130,
+            marginBottom: 12,
+            objectFit: "cover",
+            width: "100%",
+          }}
+        />
+        <h3 style={{ margin: "0 0 8px" }}>{similarDog.name}</h3>
+        <p style={{ margin: 0 }}>
+          {similarDog.size} · {similarDog.activity}
+        </p>
+      </Link>
+    ))}
+  </div>
+</section>
+
       </div>
     </main>
   );
